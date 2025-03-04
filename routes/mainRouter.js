@@ -5,7 +5,8 @@ const mainController = require("../controllers/mainController");
 
 const mainRouter = Router();
 
-mainRouter.get("/", mainController.indexGet);
+mainRouter.get("/", mainController.getUsernames);
+console.log("Route defined")
 
 mainRouter.get("/new", mainController.newGet);
 
