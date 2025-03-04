@@ -11,9 +11,9 @@ mainRouter.get("/new", mainController.createUsernameGet);
 
 mainRouter.post("/new", mainController.createUsernamePost);
 
-mainRouter.get("/search",
-    // const searchUser = req.query.searchUser
-    mainController.searchUserPost)
+mainRouter.get("/search",mainController.searchUserPost)
+
+mainRouter.get("/delete",mainController.deleteGet)
 
 // Always export back to app.js at the end
 

@@ -29,9 +29,13 @@ async function searchUserPost(req, res) {
   console.log(search);
   res.render("search", {
     title: "Search",
-    username: search.username,
+    username: search,
   });
+}
 
+async function deleteGet(req, res) {
+  await db.deleteUsers();
+  res.redirect("/");
 }
 
 module.exports = {
@@ -39,4 +43,5 @@ module.exports = {
   createUsernameGet,
   createUsernamePost,
   searchUserPost,
+  deleteGet,
 };

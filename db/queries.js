@@ -11,15 +11,23 @@ async function insertUsername(username) {
 }
 
 async function searchUser(username) {
-    console.log("username " + username)
     const { rows } = await pool.query("SELECT username FROM usernames WHERE username = $1",
     [username])
+    if (rows.length === 0) {
+        return "Username not found";
+    }
     const rowResult = rows[0]
     return rowResult;
+}
+
+async function deleteUsers(){
+    await pool.query("UPDATE usernames SET username = NULL");
+
 }
 
 module.exports = {
   getAllUsernames,
   insertUsername,
-  searchUser
+  searchUser,
+  deleteUsers,
 };
