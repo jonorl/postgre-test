@@ -8,5 +8,10 @@
     "moment": "^2.30.1",
     "node": "^18.20.7",
     "nodemailer": "^6.10.0"
+  },
+  "name": "load-db",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node db/populatedb.js"
   }
 }

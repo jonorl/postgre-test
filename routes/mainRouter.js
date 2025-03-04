@@ -6,11 +6,14 @@ const mainController = require("../controllers/mainController");
 const mainRouter = Router();
 
 mainRouter.get("/", mainController.getUsernames);
-console.log("Route defined")
 
 mainRouter.get("/new", mainController.createUsernameGet);
 
 mainRouter.post("/new", mainController.createUsernamePost);
+
+mainRouter.get("/search",
+    // const searchUser = req.query.searchUser
+    mainController.searchUserPost)
 
 // Always export back to app.js at the end
 
